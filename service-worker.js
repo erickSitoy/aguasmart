@@ -1,15 +1,16 @@
 // service-worker.js - AguaSmart
 self.addEventListener('install', (event) => {
-  console.log('Service Worker instalado 🧩');
+  console.log('Service Worker instalado.');
   event.waitUntil(
     caches.open('aguasmart-cache').then((cache) => {
       return cache.addAll([
         './',
         './index.html',
-        './style.css',
-        './script.js',
         './manifest.json',
-        './icon.png'
+        './icons/icon-192.png',
+        './icons/icon-512.png',
+        './style.css',
+        './script.js'
       ]);
     })
   );
