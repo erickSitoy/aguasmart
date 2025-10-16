@@ -2,7 +2,7 @@
   "name": "Agua Smart",
   "short_name": "AguaSmart",
   "description": "Sistema inteligente de monitoreo y gestión del agua",
-  "start_url": "./index.html",
+  "start_url": "/aguasmart/index.html",
   "display": "standalone",
   "background_color": "#00c6ff",
   "theme_color": "#00c6ff",
