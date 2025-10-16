@@ -1,0 +1,151 @@
+/* ===== Estilo general ===== */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #74b9ff, #a29bfe);
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenedores principales */
+#login-container, #registro-container, #app {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  padding: 1.6em;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  width: 100%;
+  max-width: 420px;
+}
+
+h1, h2 {
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+/* ===== Botones “bebé” ===== */
+button {
+  background: #74b9ff;
+  color: white;
+  border: none;
+  border-radius: 28px;
+  padding: 14px 22px;
+  margin: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.18s cubic-bezier(.2,.9,.3,1);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:hover {
+  transform: translateY(-3px);
+  background: #00c6ff;
+}
+
+/* Botón cerrar */
+.cerrar {
+  background: #ff7675;
+  font-size: 0.9rem;
+  border-radius: 20px;
+}
+
+/* ===== Entradas ===== */
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 12px;
+  width: 88%;
+  border-radius: 14px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* ===== Navegación ===== */
+nav {
+  background: #6c5ce7;
+  padding: 10px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+nav button {
+  background: #81ecec;
+  color: #2d3436;
+}
+
+/* ===== Panel de datos ===== */
+.panel-dato {
+  background: #0984e3;
+  padding: 12px;
+  border-radius: 12px;
+  margin-top: 12px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* ===== Ocultar/mostrar secciones ===== */
+.oculto {
+  display: none;
+}
+
+main section {
+  display: none;
+}
+
+main section.activo {
+  display: block;
+}
+
+/* ===== Texto alertas ===== */
+.alertas-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+}
+
+#estadoAlertas {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* ==== Ajustes para pantallas pequeñas ==== */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  button {
+    width: 92%;
+    font-size: 1rem;
+    border-radius: 20px;
+    padding: 14px;
+  }
+
+  input {
+    width: 92%;
+    font-size: 1rem;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}

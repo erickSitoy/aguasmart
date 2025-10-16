@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agua Smart</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- LOGIN -->
+  <div id="login-container">
+    <h2>💧 Inicio de Sesión</h2>
+    <input type="text" id="usuario" placeholder="Usuario" />
+    <input type="password" id="password" placeholder="Contraseña" />
+    <button onclick="iniciarSesion()">Iniciar Sesión</button>
+    <p>¿No tienes cuenta? <a href="#" onclick="mostrarRegistro()">Regístrate aquí</a></p>
+  </div>
+
+  <!-- REGISTRO -->
+  <div id="registro-container" class="oculto">
+    <h2>🧾 Registro de Usuario</h2>
+    <input type="text" id="nuevoUsuario" placeholder="Nuevo usuario" />
+    <input type="password" id="nuevoPassword" placeholder="Nueva contraseña" />
+    <button onclick="registrarUsuario()">Registrar</button>
+    <p>¿Ya tienes cuenta? <a href="#" onclick="mostrarLogin()">Inicia sesión</a></p>
+  </div>
+
+  <!-- PANEL PRINCIPAL -->
+  <div id="app" class="oculto">
+    <header>
+      <h1>Sistema de Gestión del Agua Inteligente 💦</h1>
+      <button class="cerrar" onclick="cerrarSesion()">Cerrar sesión</button>
+    </header>
+
+    <nav>
+      <button onclick="mostrarSeccion('nivel')">Nivel del agua</button>
+      <button onclick="mostrarSeccion('consumo')">Consumo</button>
+      <button onclick="mostrarSeccion('alertas')">Alertas</button>
+    </nav>
+
+    <main>
+      <section id="nivel" class="activo">
+        <h2>📊 Nivel del Agua</h2>
+        <button onclick="simularNivel()">Actualizar nivel</button>
+        <div id="nivelAgua" class="panel-dato">--</div>
+      </section>
+
+      <section id="consumo">
+        <h2>🚰 Consumo</h2>
+        <button onclick="simularConsumo()">Medir consumo</button>
+        <p>Consumo actual: <span id="consumoValor">0</span> L</p>
+      </section>
+
+      <section id="alertas">
+        <h2>🚨 Alertas</h2>
+        <label class="alertas-label">
+          <input type="checkbox" id="checkAlertas" onchange="toggleAlertas()"> Activar alertas
+        </label>
+        <p id="estadoAlertas">🚫 Alertas desactivadas</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
