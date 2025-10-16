@@ -1,31 +1,22 @@
-// Simple service worker: cache the app shell
-const CACHE_NAME = 'aguasmart-cache-v1';
-const FILES_TO_CACHE = [
-  '/index.html',
-  '/style.css',
-  '/script.js',
-  '/manifest.json',
-  '/icons/icon-192.png',
-  '/icons/icon-512.png'
-];
-
-self.addEventListener('install', (evt) => {
-  evt.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(FILES_TO_CACHE);
+// service-worker.js - AguaSmart
+self.addEventListener('install', (event) => {
+  console.log('Service Worker instalado.');
+  event.waitUntil(
+    caches.open('aguasmart-cache').then((cache) => {
+      return cache.addAll([
+        './',
+        './index.html',
+        './manifest.json',
+        './icon.png'
+      ]);
     })
   );
-  self.skipWaiting();
 });
 
-self.addEventListener('activate', (evt) => {
-  evt.waitUntil(self.clients.claim());
-});
-
-self.addEventListener('fetch', (evt) => {
-  evt.respondWith(
-    caches.match(evt.request).then((resp) => {
-      return resp || fetch(evt.request);
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      return response || fetch(event.request);
     })
   );
 });
