@@ -1,4 +1,4 @@
-// service-worker.js - AguaSmart
+// service-worker.js - AguaSmart actualizado
 self.addEventListener('install', (event) => {
   console.log('Service Worker instalado.');
   event.waitUntil(
@@ -23,3 +23,4 @@ self.addEventListener('fetch', (event) => {
     })
   );
 });
+
