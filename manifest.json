@@ -1,19 +1,19 @@
 {
   "name": "Agua Smart",
   "short_name": "AguaSmart",
-  "description": "Sistema inteligente de monitoreo y gesti\u00f3n del agua",
-  "start_url": "/index.html",
+  "description": "Sistema inteligente de monitoreo y gestión del agua",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#00c6ff",
   "theme_color": "#00c6ff",
   "icons": [
     {
-      "src": "icons/icon-192.png",
+      "src": "icon.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "icons/icon-512.png",
+      "src": "icon.png",
       "sizes": "512x512",
       "type": "image/png"
     }
